@@ -45,10 +45,10 @@ header {
 
 .hero-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     background-color: #ccc;
     margin-top: 20px;
-    content:url(https://fietshemel.nl/wp-content/uploads/2021/08/Vidar-E-bike-Popal-Elektrische-fiets-Vidar-damesfiets-elektrisch-mat-zwart.png);
+    content:url(https://road.shimano.com/_assets/images/stories/2023/caring-for-your-bike/caring-for-your-bike-banner.jpg);
 }
 
 .review-section {
@@ -86,7 +86,7 @@ main {
 
 .card-image {
     width: 100%;
-    height: 150px;
+    height: 250px;
     background-color: #ddd;
     margin-bottom: 10px;
 }
