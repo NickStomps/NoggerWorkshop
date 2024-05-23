@@ -45,6 +45,10 @@ header {
     color: #333;
 }
 
+.nav-hover:hover {
+    color: #37B6E9;
+}
+
 .user-profile {
     font-size: 18px;
 }
