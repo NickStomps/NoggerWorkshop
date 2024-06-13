@@ -142,8 +142,15 @@ footer {
     padding: 10px 20px;
     background-color: #242C3B;
     color: #ffffff;
+    width: 100%;
     margin-top: 20px;
     flex-wrap: wrap;
+
+}
+
+.loginFooter {
+    position: absolute !important;
+    bottom: 0;
 }
 
 .footer-contact, .footer-address, .footer-info {
