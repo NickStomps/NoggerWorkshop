@@ -7,18 +7,16 @@ $dbname = "noggerworkshop";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+//Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// Function to get fiets details (to be implemented)
+$conn->connect();
 function getFietsDetails($fiets)
 {
-    // Implement function logic here
+
 }
 
-// Function to fetch and display fietsen
 function getFietsen($conn)
 {
     $sql = "SELECT naam, prijs, img_path FROM `fiets`";
@@ -39,10 +37,3 @@ function getFietsen($conn)
         echo "No fietsen found.";
     }
 }
-
-// Call getFietsen function with the connection
-getFietsen($conn);
-
-// Close the connection
-$conn->close();
-?>
