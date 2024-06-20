@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detail pagina</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,9 +27,63 @@
         <div class="user-profile"><a href="login.html">User</a></div>
     </header>
 
-    <main>
+<main>
+    <!-- Slideshow container -->
+<div class="slideshow-container">
 
-    </main>
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/Temp1.webp" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/Temp2.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/Temp3.jpg" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  
+  <!-- The dots/circles -->
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  
+    <div class="details">
+        <div class="purchase">
+            <select>
+                <option>Kopen</option>
+                <option>Huren</option>
+            </select>
+            <button>Add to Cart</button>
+        </div>
+        <div class="description">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam non metus quis nisi commodo pharetra quis ac ligula. Etiam a nisl eu ipsum viverra finibus. Duis blandit maximus odio, scelerisque commodo ipsum elementum vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui libero, aliquam a velit vitae, congue viverra nisl. Etiam nec orci mi. In turpis ante, convallis et sem ut, gravida imperdiet arcu.
+
+                Suspendisse nec velit vitae turpis volutpat commodo. Vivamus ac turpis rhoncus, consequat sapien sit amet, sodales enim. Etiam pellentesque vitae ex eget porta. Quisque venenatis quam ac aliquet congue. Vestibulum vehicula augue arcu. Curabitur sollicitudin id neque a eleifend. Nulla vel magna nisl. Duis in rhoncus dui, eu semper turpis. Mauris placerat fringilla leo vitae cursus. Proin quis metus libero. Curabitur vel mattis dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                
+                Proin id nisi sed velit dictum suscipit. Aliquam magna diam, ornare sed porta eu, ullamcorper gravida ex. Etiam tempor placerat metus aliquam rhoncus. Sed sodales, neque a malesuada malesuada, erat ipsum molestie justo, nec tristique lacus tellus eget enim. Maecenas pellentesque eleifend est, vitae scelerisque nisi maximus vel. Duis ac tortor eu ligula sollicitudin semper vel ac lacus. Ut semper massa aliquet nisl lacinia volutpat. Pellentesque tortor lacus, venenatis vitae nisi vitae, feugiat congue nulla. Integer nibh nibh, semper id enim eu, commodo dictum magna. Maecenas at risus vel arcu rhoncus sodales. In egestas posuere odio placerat sagittis. Curabitur eu orci sit amet justo consectetur lacinia. Maecenas aliquet justo quis mauris ullamcorper tempor. Integer maximus, dolor efficitur vulputate porttitor, metus dolor aliquam purus, in sagittis nisl lectus vel arcu. Etiam tempus sagittis ipsum, quis tincidunt risus semper vel.</p>
+        </div>
+        <div class="reviews">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <input type="text" class="review-input" placeholder="Write a review">
+        </div>
+    </div>
+</main>
 
     <footer>
         <ul>
@@ -38,5 +92,6 @@
             <li><a href="#">info</a></li>
         </ul>
     </footer>
+<script src="script.js"></script>
 </body>
 </html>
