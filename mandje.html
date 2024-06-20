@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Winkelmand</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="height: 100vh;">
+<body>
+
     <header>
         <div class="logo">
             <img src="images/logo.avif" alt="">
@@ -24,16 +25,31 @@
                 <li><a href="mandje.html">Winkelmandje</a></li>
             </ul>
         </nav>
+        <div class="user-profile"><a href="login.html">User</a></div>
     </header>
 
-    <main class="login-main">
-        <form>
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Enter email"></input>
-            <label>Password:</label>
-            <input type="password" name="password" placeholder="Enter password"></input>
-            <button type="submit">Login</button>
-        </form>
+    <main>
+        <div class="">
+            <section class="winkelmand">
+                <h2>Winkelmand</h2>
+                <h5>titel product</h5>
+                <div class="prijs">
+                    <p>prijs:</p>
+                </div>
+            </section>
+            <section class="bon">
+                <h3>Overzicht</h3>
+                <div class="totaalOverzicht">
+                    <p>Artikelen</p>
+                    <p>Verzendskosten</p>
+                </div>
+                <hr>
+                <div class="totaal">
+                    <p>Totaalbedrag</p>
+                </div>
+                <button class="">Checkout</button>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -49,7 +65,5 @@
             </li>
         </ul>
     </footer>
-    
-    <script src="script.js"></script>
 </body>
 </html>
