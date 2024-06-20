@@ -1,12 +1,23 @@
+<?php include("database.php"); 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "noggerworkshop";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Register</title>
+    <title>Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="height: 100vh;">
+<body>
     <header>
         <div class="logo">
             <img src="images/logo.avif" alt="">
@@ -29,15 +40,21 @@
     </header>
 
     <main>
-        <form>
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Enter email"></input>
-            <label>Password:</label>
-            <input type="password" name="password" placeholder="Enter password"></input>
-            <button type="submit">Login</button>
-        </form>
+        <div class="hero-image"></div>
+        <div class="review-section" style="display: block;">
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+            <div class="review-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            </div>
+        </div>
+        <h2>Populaire producten</h2>
+        <div class="product-grid">
+            <?php getFietsen($conn); ?>
+        </div>
     </main>
-    <footer class="loginFooter">
+    <footer>
         <ul class="nav-links">
             <li class="footer-contact nav-hover"><a href="#">contact</a></li>
             <li class="footer-address nav-hover"><a href="#">adres</a></li>
