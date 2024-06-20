@@ -1,3 +1,14 @@
+<?php include("database.php"); 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "noggerworkshop";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +18,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="logo">
             <img src="images/logo.avif" alt="">
@@ -17,12 +27,15 @@
             <button>Search</button>
         </div>
         <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" class="nav-hover">Home</a></li>
-                <li><a href="product.html" class="nav-hover">Products</a></li>
-                <li><a href="reparatie.html" class="nav-hover">Repairs</a></li>
-                <li><a href="mandje.html" class="nav-hover">Winkelmandje</a></li>
-            </ul>
+            <div class="navOrg">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-hover">Home</a></li>
+                    <li><a href="product.html" class="nav-hover">Products</a></li>
+                    <li><a href="reparatie.html" class="nav-hover">Repairs</a></li>
+                    <li><a href="#" class="nav-hover">Winkelmandje</a></li>
+                    <li class="user-profile"><a href="login.html" class="nav-hover">User</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -38,54 +51,9 @@
         </div>
         <h2>Populaire producten</h2>
         <div class="product-grid">
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
-            <div class="card">
-                <img class="card-image" src="https://cloudinary.pondigital.solutions/pon-digital-solutions/image/upload/q_auto,f_auto/dmp.pon.bike/1280_WU4dEJ7k8X29ssov.png"></img>
-                <div class="card-title">Card Title</div>
-                <div class="card-text">Secondary text</div>
-            </div>
+            <?php getFietsen($conn); ?>
         </div>
     </main>
-
     <footer>
         <ul class="nav-links">
             <li class="footer-contact nav-hover"><a href="#">contact</a></li>
@@ -93,8 +61,6 @@
             <li class="footer-info nav-hover"><a href="#">info</a></li>
         </ul>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
-
