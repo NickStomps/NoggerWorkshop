@@ -13,33 +13,83 @@ if ($conn->connect_error) {
 }
 
 // Function to get fiets details (to be implemented)
-function getFietsDetails($fiets)
+function getFietsDetails($conn, $fietsId)
 {
-    // Implement function logic here
+    $sql = "SELECT * FROM `fiets` WHERE id = " . $fietsId . ";";
+    $result = $conn->query($sql);
+
+    if($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $naam = $row["naam"];
+            $prijs = $row["prijs"];
+            $beschikbaarheid = $row["is_beschikbaar"];
+            $images = $row["images_id"];
+            $beschrijving = $row["beschrijving"];
+            $fietsArray = [
+                "naam" => $naam,
+                "prijs" => $prijs,
+                "beschikbaarheid" => $beschikbaarheid,
+                "images" => $images,
+                "beschrijving" => $beschrijving
+            ];
+        }
+        
+        return $fietsArray;
+    } 
 }
 
 // Function to fetch and display fietsen
 function getFietsen($conn)
 {
-    $sql = "SELECT naam, prijs, img_path FROM `fiets`";
+    $sql = "SELECT id, naam, prijs, images_id FROM `fiets`";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
+            $id = $row["id"];
             $naam = $row["naam"];
             $prijs = $row["prijs"];
-            $img_path = $row["img_path"];
-            echo "<div class='card'>";
-            echo "<img class='card-image' src='" . $img_path . "'>";
+            $image = $row["images_id"];
+            echo "<div class='card' id='" . $id . "'>";
+            echo "<img class='card-image' src='" . getFirstImage($conn, $image) . "'>";
             echo "<div class='card-title'>" . $naam . "</div>";
             echo "<div class='card-price'>€" . $prijs . "</div>";
             echo "</div>";
         }
-    } else {
-        echo "No fietsen found.";
     }
+}
+
+function getFietsImages($conn, $imagesId)
+{
+    $sql = "SELECT * FROM `images` WHERE id = " . $imagesId . ";";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $image1 = $row["image1"];
+            $image2 = $row["image2"];
+            $image3 = $row["image3"];
+            $imgArray = [
+                "image1" => $image1,
+                "image2" => $image2,
+                "image3" => $image3
+            ];
+        }
+        return $imgArray;
+    }
+}
+
+function getFirstImage($conn, $imagesId)
+{
+    $sql = "SELECT `image1` FROM `images` WHERE id = " . $imagesId . ";";
+    $result = $conn->query($sql);
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $image = $row["image1"];
+        }
+    }
+    return $image;
 }
 
 // Close the connection
 $conn->close();
-?>
+

@@ -9,10 +9,9 @@ document.querySelector('.search-bar button').addEventListener('click', function(
 // Example of adding functionality to product cards (if needed)
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', function() {
-        let cardTitle = this.querySelector('.card-title').innerText;
+        let id = this.id;
         // Hier vervang je de alert door een omleiding naar een andere pagina
-        // window.location.href = 'detailbuypage?cardTitle=' + cardTitle;
-        window.location.href = 'detailbuypage.html';
+        window.location.href = `detailbuypage.php?id=${id}`;
     });
 });
 
