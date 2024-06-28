@@ -1,13 +1,23 @@
+<?php include 'database.php';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "noggerworkshop";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Product</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="height: 100vh;">
+
+<body>
+
     <header>
         <div class="logo">
             <img src="images/logo.avif" alt="">
@@ -18,22 +28,18 @@
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="product.php">Products</a></li>
-                <li><a href="reparatie.html">Repairs</a></li>
-                <li><a href="mandje.html">Winkelmandje</a></li>
+                <li><a href="index.php" class="nav-hover">Home</a></li>
+                <li><a href="product.php" class="nav-hover">Products</a></li>
+                <li><a href="reparatie.html" class="nav-hover">Repairs</a></li>
+                <li><a href="mandje.html" class="nav-hover">Winkelmandje</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="login-main">
-        <form>
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Enter email"></input>
-            <label>Password:</label>
-            <input type="password" name="password" placeholder="Enter password"></input>
-            <button type="submit">Login</button>
-        </form>
+    <main>
+        <div class="product-grid">
+            <?php getFietsen($conn); ?>
+        </div>
     </main>
 
     <footer>
@@ -43,7 +49,7 @@
             <li class="footer-info nav-hover"><a href="#">info</a></li>
         </ul>
     </footer>
-    
     <script src="script.js"></script>
 </body>
+
 </html>

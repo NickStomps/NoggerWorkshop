@@ -9,8 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 $url = $_SERVER['REQUEST_URI'];
 $url_components = parse_url($url);
-// Use parse_str() function to parse the
-// string passed via URL
+
 parse_str($url_components['query'], $params);
 
 $array = getFietsDetails($conn, $params["id"]);
@@ -95,10 +94,10 @@ $images = getFietsImages($conn, $array["images"]);
 </main>
 
     <footer>
-        <ul>
-            <li><a href="#">contact</a></li>
-            <li><a href="#">adres</a></li>
-            <li><a href="#">info</a></li>
+        <ul class="nav-links">
+            <li class="footer-contact nav-hover"><a href="#">contact</a></li>
+            <li class="footer-address nav-hover"><a href="#">adres</a></li>
+            <li class="footer-info nav-hover"><a href="#">info</a></li>
         </ul>
     </footer>
 <script src="script.js"></script>

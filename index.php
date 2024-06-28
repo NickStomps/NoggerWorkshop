@@ -30,7 +30,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             <div class="navOrg">
                 <ul class="nav-links">
                     <li><a href="index.php" class="nav-hover">Home</a></li>
-                    <li><a href="product.html" class="nav-hover">Products</a></li>
+                    <li><a href="product.php" class="nav-hover">Products</a></li>
                     <li><a href="reparatie.html" class="nav-hover">Repairs</a></li>
                     <li><a href="#" class="nav-hover">Winkelmandje</a></li>
                     <li class="user-profile"><a href="login.html" class="nav-hover">User</a></li>   
@@ -46,7 +46,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 ⭐⭐⭐⭐⭐
             </div>
             <div class="review-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                Super goede service! Ik ben erg tevreden met mijn nieuwe fiets.
             </div>
         </div>
         <h2>Populaire producten</h2>

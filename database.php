@@ -4,15 +4,13 @@ $username = "root";
 $password = "";
 $dbname = "noggerworkshop";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Function to get fiets details (to be implemented)
 function getFietsDetails($conn, $fietsId)
 {
     $sql = "SELECT * FROM `fiets` WHERE id = " . $fietsId . ";";
@@ -38,7 +36,7 @@ function getFietsDetails($conn, $fietsId)
     } 
 }
 
-// Function to fetch and display fietsen
+
 function getFietsen($conn)
 {
     $sql = "SELECT id, naam, prijs, images_id FROM `fiets`";
@@ -90,6 +88,5 @@ function getFirstImage($conn, $imagesId)
     return $image;
 }
 
-// Close the connection
 $conn->close();
 
